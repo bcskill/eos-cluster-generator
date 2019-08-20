@@ -2,11 +2,11 @@ from config import IP
 import platform
 #CMD_PREFIX = "docker exec nodeosd cleos --wallet-url http://%s:8900" % IP
 if platform.uname()[0] == 'Darwin':
-    CMD_PREFIX = "docker exec nodeosd cleos"
-    CMD_PREFIX_KEOSD = "docker exec nodeosd"
+    CMD_PREFIX = "cleos"
+    CMD_PREFIX_KEOSD = "nodeos"
 else:
-    CMD_PREFIX = "sudo docker exec nodeosd cleos"
-    CMD_PREFIX_KEOSD = "sudo docker exec nodeosd"
+    CMD_PREFIX = "cleos"
+    CMD_PREFIX_KEOSD = "nodeos"
 SYSTEM_ACCOUNTS = ['eosio.bpay',
 'eosio.token',
 'eosio.msig',
@@ -16,7 +16,8 @@ SYSTEM_ACCOUNTS = ['eosio.bpay',
 'eosio.saving',
 'eosio.stake',
 'eosio.vpay',
-'eosio.wrap']
+'eosio.wrap',
+'eosio.rex']
 DOCKER_IMAGE = "eoslaomao/eos:1.4.1-blacklist-plugin"
 BIOS_DOCKER_COMPOSE = """
 version: "3"
