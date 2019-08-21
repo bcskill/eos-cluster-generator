@@ -127,6 +127,7 @@ def generate():
         generate_import_script(current_ip)
         generate_wallet_script(current_ip)
         copyfile('./start.sh', './scripts/' + current_ip + '/start.sh')
+        copyfile('./continue.sh', './scripts/' + current_ip + '/continue.sh')
 
     generate_import_script('bios')
     generate_voters('bios', prods)
